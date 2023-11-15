@@ -1,13 +1,141 @@
-body {
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  border: 0;
+}
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:focus,
+:active {
+  outline: none;
+}
+a:focus,
+a:active {
+  outline: none;
+}
+.wrapper {
+  text-align: center;
+  box-sizing: border-box;
+  padding: 30px;
+  height: 100vh;
+  color: white;
+  width: 100%;
+  background-color: rgb(100, 100, 100);
+}
+header {
+  width: 100%;
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input {
+  padding: 0;
+  box-sizing: border-box;
+}
+p,
+h1,
+h2 {
+  margin: 0;
+}
+h1 {
+  font-size: 24px;
+}
+h2 {
+  font-size: 20px;
+}
+label {
+  text-align: left;
+  width: 100%;
+  vertical-align: top;
+}
+section {
+  width: 500px;
+}
+input {
+  width: 100%;
+  border: none;
+  padding: 4px;
+}
+.content {
+  text-align: left;
+}
+label p {
+  font-size: 14px;
+  color: rgb(187, 187, 187);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+label.gray {
+  color: rgb(49, 46, 46);
+}
+label.gray p {
+  color: rgb(49, 46, 46);
+}
+label div div {
+  background-color: white;
+  color: gray;
+  padding: 2px;
+}
+label.gray div.icon div {
+  border-top: solid 1px rgb(49, 46, 46);
+  border-left: solid 1px rgb(49, 46, 46);
+  border-bottom: solid 1px rgb(49, 46, 46);
+  background-color: gray;
+  color: rgb(49, 46, 46);
+  padding: 2px;
+}
+label.gray input {
+  border: solid 1px rgb(49, 46, 46);
+  color: rgb(49, 46, 46);
+  background-color: gray;
+}
+label.gray input::placeholder {
+  color: rgb(49, 46, 46);
+}
+label div {
+  display: flex;
+}
+label.error div.icon div {
+  border-top: solid 1px red;
+  border-left: solid 1px red;
+  border-bottom: solid 1px red;
+  background-color: white;
+  color: red;
+  padding: 2px;
+}
+label.gray.error div.icon div {
+  border-top: solid 1px red;
+  border-left: solid 1px red;
+  border-bottom: solid 1px red;
+  background-color: gray;
+  color: red;
+  padding: 2px;
+}
+label span {
+  color: red;
+}
+span.error {
+  color: red;
+}
+label.error input::placeholder {
+  color: red;
+}
+label.error div.icon input {
+  border-top: solid 1px red;
+  border-right: solid 1px red;
+  border-bottom: solid 1px red;
+  color: red;
+}
+label.error div input {
+  border: solid 1px red;
+  color: red;
+}
+label div.icon input {
+  border-left: none;
 }
