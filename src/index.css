@@ -139,3 +139,19 @@ label.error div input {
 label div.icon input {
   border-left: none;
 }
+
+button {
+  background-color: inherit;
+  margin: 5px;
+  cursor: pointer;
+}
+button:hover {
+  color: aqua;
+}
+a {
+  color: black;
+}
+a:hover {
+  color: aqua;
+  text-decoration: none;
+}

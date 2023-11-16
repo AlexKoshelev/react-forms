@@ -11,6 +11,7 @@ const TextField = ({
   isRequired,
   error,
   componentStyle,
+  name,
   icon,
 }) => {
   const className = componentStyle ? "gray" : null;
@@ -40,6 +41,7 @@ const TextField = ({
         <div className={icon ? "icon" : null}>
           {icon ? <div style={getRadius(true)}>{icon}</div> : null}
           <input
+            name={name}
             style={getRadius()}
             id={id}
             type={type}
@@ -54,11 +56,16 @@ const TextField = ({
 };
 TextField.propTypes = {
   type: PropTypes.string,
+  value: PropTypes.string,
   placeholder: PropTypes.string,
   label: PropTypes.string,
   id: PropTypes.string,
   description: PropTypes.string,
   borderRadius: PropTypes.string,
   isRequired: PropTypes.bool,
+  error: PropTypes.string,
+  componentStyle: PropTypes.bool,
+  name: PropTypes.string,
+  icon: PropTypes.any,
 };
 export default TextField;
