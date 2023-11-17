@@ -155,3 +155,16 @@ a:hover {
   color: aqua;
   text-decoration: none;
 }
+
+.s,
+.s input::placeholder {
+  font-size: 14px !important;
+}
+.m,
+.m input::placeholder {
+  font-size: 18px !important;
+}
+.l,
+.l input::placeholder {
+  font-size: 22px !important;
+}

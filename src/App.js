@@ -1,13 +1,13 @@
 import { useLocation } from "react-router-dom";
 import Signin from "./components/ui/signin";
 import Signup from "./components/ui/signup";
-import { useRef, useState } from "react";
 
 function App() {
   const { pathname } = useLocation();
 
-  const handleSubmit = (e, data, ref) => {
+  const handleSubmit = (e, data, ref, getError) => {
     e.preventDefault();
+    if (getError && getError()) return getError();
     console.log(data);
     ref.current.reset();
   };

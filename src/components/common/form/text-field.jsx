@@ -13,6 +13,10 @@ const TextField = ({
   componentStyle,
   name,
   icon,
+  autocomplete,
+  inputRef,
+  disabled,
+  size,
 }) => {
   const className = componentStyle ? "gray" : null;
   function getRadius(isIcon) {
@@ -35,18 +39,24 @@ const TextField = ({
 
   return (
     <>
-      <label htmlFor={id} className={`${className} ${error ? " error" : null}`}>
+      <label
+        htmlFor={id}
+        className={`${className + " " + size} ${error ? " error" : null}`}
+      >
         {label} {isRequired ? <span>*</span> : null}
         {description ? <p>{description}</p> : null}
         <div className={icon ? "icon" : null}>
           {icon ? <div style={getRadius(true)}>{icon}</div> : null}
           <input
+            ref={inputRef}
             name={name}
             style={getRadius()}
             id={id}
             type={type}
             value={value}
             placeholder={placeholder}
+            autoComplete={autocomplete}
+            disabled={disabled}
           />
         </div>
       </label>
@@ -65,7 +75,11 @@ TextField.propTypes = {
   isRequired: PropTypes.bool,
   error: PropTypes.string,
   componentStyle: PropTypes.bool,
+  disabled: PropTypes.bool,
   name: PropTypes.string,
+  autoComplete: PropTypes.string,
+  size: PropTypes.string,
+  inputRef: PropTypes.object,
   icon: PropTypes.any,
 };
 export default TextField;

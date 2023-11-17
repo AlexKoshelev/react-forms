@@ -1,30 +1,36 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import TextField from "../common/form/text-field";
 import FormWrapper from "../common/form-wrapper";
 import { NavLink } from "react-router-dom";
 import Button from "../common/button";
 const Signin = ({ handleSubmit }) => {
   const refSignin = useRef(null);
-  const [signinData, setSigninData] = useState({ email: "", password: "" });
+  const refInputEmail = useRef(null);
+  const [data, setData] = useState({ email: "", password: "" });
+  useEffect(() => {
+    if (refInputEmail.current) refInputEmail.current.focus();
+  }, []);
   const handleChange = (e) => {
-    setSigninData((p) => ({ ...p, [e.target.name]: e.target.value }));
+    setData((p) => ({ ...p, [e.target.name]: e.target.value }));
   };
   const handleReset = () => {
-    setSigninData({ email: "", password: "" });
+    setData({ email: "", password: "" });
   };
   return (
     <>
       <FormWrapper title={"Форма авторизации"}>
         <form
           ref={refSignin}
-          onSubmit={(e) => handleSubmit(e, signinData, refSignin)}
+          onSubmit={(e) => handleSubmit(e, data, refSignin)}
           onChange={handleChange}
           onReset={handleReset}
         >
           <TextField
+            inputRef={refInputEmail}
             type="email"
             name="email"
             placeholder={"Введите почту"}
+            autoComplete={"email"}
             label={"Укажите почту"}
             borderRadius={"2px"}
             isRequired={true}
@@ -34,6 +40,7 @@ const Signin = ({ handleSubmit }) => {
           <TextField
             type="password"
             name="password"
+            autocomplete="current-password"
             placeholder={"Введите пароль"}
             label={"Введите пароль"}
             borderRadius={"2px"}
